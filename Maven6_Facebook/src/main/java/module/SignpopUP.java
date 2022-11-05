@@ -7,9 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class SignpopUP {
-	
-	WebDriver driver;
-	Select se;
+	private WebDriver driver;
+	private Select se;
 	
 	@FindBy(xpath= "//select[@id='day']")
 	private WebElement day;

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="ChromeTest(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testpkg.CreateExcelsheetCodeFormRepeatCode">
+      <class name="testpkg.VerifyTheLoginApplication">
         <methods>
-          <include name="CreatePomBojects"/>
-          <include name="verifyContactToHelpCenterButton"/>
+          <include name="createpomClassObjects"/>
           <include name="launchBrowser"/>
-          <include name="verifyReturnToMessengerButton"/>
+          <include name="verifycontactToHelpCenter"/>
+          <include name="roomPageOpen"/>
           <include name="clearObject"/>
-          <include name="openRomPage"/>
+          <include name="verifyReturnTomessgengerPage"/>
           <include name="logoutFromApplication"/>
         </methods>
-      </class> <!-- testpkg.CreateExcelsheetCodeFormRepeatCode -->
+      </class> <!-- testpkg.VerifyTheLoginApplication -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

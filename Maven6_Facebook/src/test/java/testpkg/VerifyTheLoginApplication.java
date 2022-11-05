@@ -21,16 +21,15 @@ import pages.RoomPage;
 import setup.Base;
 import utils.Utility;
 
-public class CreateExcelsheetCodeFormRepeatCode extends Base{
+public class VerifyTheLoginApplication extends Base {
 	private WebDriver driver;
-	private LoginPage loginpage;
-	private MessengerPage messengerpage;
-	private RoomPage roompage;
+	private LoginPage loginPage;
+	private MessengerPage messengerPage;
+	private RoomPage roomPage;
 	private SoftAssert soft;
 	private int testID;
 	
-	
-	@Parameters("browser")
+	@Parameters ("browser")
 	@BeforeTest
 	public void launchBrowser(String browserName)
 	{
@@ -39,51 +38,46 @@ public class CreateExcelsheetCodeFormRepeatCode extends Base{
 			driver=openChromeBrowser();
 		}
 		
-		if(browserName.equals("Firefox"))
-		{
-			driver=openFirefoxBrowser();
-		}
-		if(browserName.equals("Edge"))
-		{
-			driver=OpenEdgeBrowser();
-		}
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();	
-			
+		
 	}
+	
 	@BeforeClass
-	public void CreatePomBojects() throws EncryptedDocumentException, IOException
+	public void createpomClassObjects() throws EncryptedDocumentException, IOException
 	{
 		System.out.println("before classs");
-		loginpage = new LoginPage(driver);
+		loginPage = new LoginPage(driver);
 		
 		String data=Utility.getDataFromExcelSheet("Sheet3", 1, 0);
-		loginpage.sendUserNme(data);
+		loginPage.sendUserNme(data);
 		
 		data=Utility.getDataFromExcelSheet("Sheet3", 1, 1);
-		loginpage.sendPassword(data);
+		loginPage.sendPassword(data);
 		
-		messengerpage = new MessengerPage(driver);
-		roompage = new RoomPage(driver);
-	}  
-	
-	@BeforeMethod
-	public void openRomPage() throws InterruptedException
-	{
-		testID=8989;
-		System.out.println("before method");
-		driver.get("https://www.facebook.com/");
-		loginpage.clickonMessenger();
-		messengerpage.clickOnRoomsTab();
-		soft=new SoftAssert();
+		messengerPage = new MessengerPage(driver);
+		roomPage = new RoomPage(driver);
+		
 	}
 	
-	@Test(priority=0)
-	public void verifyReturnToMessengerButton() throws InterruptedException
+	@BeforeMethod
+	public void roomPageOpen() throws InterruptedException
+	{
+		driver.get("https://www.facebook.com/");
+		
+		loginPage.clickonMessenger();
+		messengerPage.clickOnRoomsTab();
+		soft=new SoftAssert();
+		
+	}
+
+	
+	@Test
+	public void verifyReturnTomessgengerPage() throws InterruptedException
 	{
 		testID=2345;
 		System.out.println("test1");
-		roompage.clickOnRuturnMessenger();
+		roomPage.clickOnRuturnMessenger();
 		// Actual Result
 		String url = driver.getCurrentUrl();
 		String title = driver.getTitle();
@@ -95,12 +89,12 @@ public class CreateExcelsheetCodeFormRepeatCode extends Base{
 		soft.assertAll();
 		
 	}
-	@Test(priority=1)
-	public void verifyContactToHelpCenterButton() throws InterruptedException
+	@Test
+	public void verifycontactToHelpCenter() throws InterruptedException
 	{
 		testID=2929;
 		System.out.println("test2");
-		roompage.gobackToHelpCenter();
+		roomPage.gobackToHelpCenter();
 
 		//if else cha jagi aplyla assertion vaprav lagte
 		//Actual Result
@@ -112,7 +106,6 @@ public class CreateExcelsheetCodeFormRepeatCode extends Base{
 		soft.assertEquals(title, "Messenger Help Centre");
 		soft.assertAll();
 	}
-	
 	@AfterMethod
 	public void logoutFromApplication(ITestResult result) throws IOException
 	{
@@ -127,9 +120,9 @@ public class CreateExcelsheetCodeFormRepeatCode extends Base{
 	@AfterClass
 	public void clearObject()
 	{
-		loginpage = null;
-		messengerpage =null;
-		roompage = null;
+		loginPage = null;
+		messengerPage =null;
+		roomPage = null;
 	}
 //	@AfterTest
 //	public void closeBrowser()
@@ -140,9 +133,4 @@ public class CreateExcelsheetCodeFormRepeatCode extends Base{
 //		System.gc();     //grabage collector
 //	}
 	
-	
-	
-	
-	
-
 }

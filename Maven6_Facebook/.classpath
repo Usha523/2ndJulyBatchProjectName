@@ -29,6 +29,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/Selenium2July/selenium-server-4.4.0.jar"/>
+	<classpathentry kind="lib" path="D:/Eclipse/eclipse/plugins/org.testng_7.4.0.r202105021533.jar" sourcepath="D:/Eclipse/eclipse/plugins/org.testng.source_7.4.0.r202105021533.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

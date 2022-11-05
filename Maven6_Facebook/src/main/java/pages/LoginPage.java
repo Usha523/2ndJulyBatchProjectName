@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
+	private WebDriver driver;
 	
 	//Variable ->private->WebElement->deceleration
 	
@@ -17,12 +18,21 @@ public class LoginPage {
 	
 	@FindBy(xpath= "//a[text()='Messenger']")
 	private WebElement messenger;
-	
+//	@FindBy(xpath= "//input[@id='email']")
+//	private WebElement username;
+//	
+//	@FindBy(xpath= "//input[@id='pass']")
+//	private WebElement password;
+//	
+//	@FindBy(xpath= "//a[text()='Messenger']")
+//	private WebElement messenger;
+//	
 	//constructor->public->WebElement->initialization
 	
 	public LoginPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
+		this.driver=driver;
 	}
 	//method->public ->usees actions
 	public void sendUserNme(String name)
