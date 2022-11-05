@@ -3,15 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testpkg.TestNgClass2">
+      <class name="testpkg.VerifyTheLoginApplication">
         <methods>
-          <include name="aftermethod"/>
-          <include name="test1"/>
-          <include name="afterclass"/>
-          <include name="beforemethod"/>
-          <include name="beforeclass"/>
+          <include name="createpomClassObjects"/>
+          <include name="launchBrowser"/>
+          <include name="verifycontactToHelpCenter"/>
+          <include name="roomPageOpen"/>
+          <include name="clearObject"/>
+          <include name="verifyReturnTomessgengerPage"/>
+          <include name="logoutFromApplication"/>
         </methods>
-      </class> <!-- testpkg.TestNgClass2 -->
+      </class> <!-- testpkg.VerifyTheLoginApplication -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

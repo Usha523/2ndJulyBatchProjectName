@@ -4,17 +4,17 @@
   <test thread-count="5" name="ChromeTest(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testpkg.CreateExcelsheetCodeFormRepeatCode">
+      <class name="testpkg.VerifyTheLoginApplication">
         <methods>
-          <include name="CreatePomBojects"/>
-          <include name="verifyContactToHelpCenterButton"/>
+          <include name="createpomClassObjects"/>
           <include name="launchBrowser"/>
-          <include name="verifyReturnToMessengerButton"/>
+          <include name="verifycontactToHelpCenter"/>
+          <include name="roomPageOpen"/>
           <include name="clearObject"/>
-          <include name="openRomPage"/>
+          <include name="verifyReturnTomessgengerPage"/>
           <include name="logoutFromApplication"/>
         </methods>
-      </class> <!-- testpkg.CreateExcelsheetCodeFormRepeatCode -->
+      </class> <!-- testpkg.VerifyTheLoginApplication -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
