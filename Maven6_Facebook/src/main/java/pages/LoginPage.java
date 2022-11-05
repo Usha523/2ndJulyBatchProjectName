@@ -25,30 +25,21 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	//method->public ->usees actions
-	
-	public void sendUserName()
+	public void sendUserNme(String name)
 	{
-		username.sendKeys("ushakalpande");
+		username.sendKeys(name);
 	}
-	
-	public void sendPassword()
+	public void sendPassword(String pass)
 	{
-		password.sendKeys("usha@123");
+		password.sendKeys(pass);
 	}
-	
-	public void clickonMessenger()
-	{
+
+	public void clickonMessenger() {
+		// TODO Auto-generated method stub
 		messenger.click();
-		
 	}
-	
-////	public void clickonRoomTab()
-////	{
-////		rooms.click();
-////		
-//	}
-//	
-	
+
+
 	
 	
 
